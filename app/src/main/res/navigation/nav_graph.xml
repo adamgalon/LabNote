@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainLabFragment">
+
+    <fragment
+        android:id="@+id/mainLabFragment"
+        android:name="com.example.labnote.ui.main.MainLabFragment"
+        android:label="main_lab_fragment"
+        tools:layout="@layout/main_lab_fragment">
+        <action
+            android:id="@+id/action_mainLabFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+        <action
+            android:id="@+id/action_mainLabFragment_to_findNoteFragment"
+            app:destination="@id/findNoteFragment" />
+        <action
+            android:id="@+id/action_mainLabFragment_to_recentlyAddedFragment"
+            app:destination="@id/recentlyAddedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recentlyAddedFragment"
+        android:name="com.example.labnote.ui.recentlyadded.RecentlyAddedFragment"
+        android:label="RecentlyAddedFragment"
+        tools:layout="@layout/recently_added_fragment" />
+    <fragment
+        android:id="@+id/findNoteFragment"
+        android:name="com.example.labnote.ui.findnote.FindNoteFragment"
+        android:label="FindNoteFragment"
+        tools:layout="@layout/find_note_fragment" />
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.example.labnote.ui.addnote.AddNoteFragment"
+        android:label="AddNoteFragment"
+        tools:layout="@layout/add_note_fragment" />
 
 </navigation>
